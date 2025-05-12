@@ -5,3 +5,5 @@ def test_example():
 def test_another():
     assert 2 * 2 == 4
 
+def test_another2():
+    assert 3 * 3 * 3 == 27
