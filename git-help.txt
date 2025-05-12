@@ -1,0 +1,193 @@
+git config --list
+
+# used on github.com
+git config --global user.name = "yyao43"
+git config --global user.email = "yyao@gmx.de"
+
+#show
+
+git config user.name
+git config user.email
+#show all:
+git config --list
+
+##
+
+git status
+
+git log
+git log --oneline
+
+git add .
+git init -m "init commit"
+
+#modify files
+git add fileXX
+git commit -m "add fileXX"
+
+git log --oneline
+
+git checkout IDxx
+git checkout IDyy
+
+git branch branchXX
+git switch branchXX
+git merge main
+
+git remote add origin https://.... #create RepoXX before on github.com
+git pull -u origin master
+
+#==> ask username and password for GitHub.com
+# ==> ....Branch "master" set up to track remote branch "master" from "origin".
+# <==> store locally and track remotely....
+
+
+##
+#git help:
+man git
+# ==>
+# high-level commands
+# low-level commands
+
+
+get help
+git help config
+
+# init new Repo/ProjectXX
+cd projectXX
+git init
+
+git add .
+git commit -m "init commit"
+
+ls -al .git
+
+
+##
+# commands for daily jobs
+
+git commit -a -m
+git add .
+git status --short
+
+git add A
+git status
+
+git diff --staged
+
+git status -s
+git status --short
+
+git diff
+
+git diff --staged
+
+#==> compared files: diff --git a/file1 b/file2
+#==> File Metadata : Index file1-id. file2-id accessmode
+#==> Change Markers for File A(---)/B(+++)
+
+#==> Chunk Header: @@ ...@@
+#@@  -nn,m in File A(-) line "nn" , "m"-lines changed
+#     +NN,M in FileB(+) line "NN", "M"-lines changed @@
+
+#==> Chunk Changes:
+Example lines...:
+
+- old content
++ New content
+
+git diff (see diff in working-dir/not staged )
+
+git diff --staged --no-renames
+
+###Commit Changes###
+
+
+
+#git status
+#==>
+your branch is ahead of 'origin/master' , means remote + branch=master?, by 1
+  print((use "git push" to publish your local commits.
+
+#==>
+git push origin master  ( means push to remote's name(==origin),'
+  ' with local branch name(==master ), which I want to push up to...)
+==> push local changes to remote site.
+
+ "master -> master" means: push local branch "master" to origin "master" on remote.
+
+###check commit history
+git log
+
+git log --oneline
+
+git log -1  #latest one
+
+git log --stat
+
+git log --patch
+
+
+commit guide line:
+http://chris.beams.io/posts/git-commit/
+
+The seven rules of a great Git commit message
+Keep in mind: This has all been said before.
+Separate subject from body with a blank line
+Limit the subject line to 50 characters
+Capitalize the subject line
+Do not end the subject line with a period
+Use the imperative mood in the subject line
+Wrap the body at 72 characters
+Use the body to explain what and why vs. how
+
+
+## remove and move file
+#remove / stop track to fileXX, remove from the project
+git rm fileXX
+
+git status ==> deleted: fileXX
+
+ls  ==> no fileXX any more.
+
+# untrack fileXX but keep fileXX in  project:
+
+git rm --cached fileXX
+
+git status ==> no "deleted: fileXX", but "untracted"
+ls ==> fileXX exists.
+
+#rename:
+git mv README.md README
+
+git status
+
+## Branches
+
+https://git-school.github.io/visualizing-git/
+
+git commit
+git commit
+#create new branch
+git checkout -b new_branch
+
+git status
+
+git commit
+git commit
+
+git checkout master
+
+git add .
+git stash(verstecken) ==> saved working directory and index state WIP on new_branch:...
+
+git status
+
+git stash list
+
+==> stash@{0}: WIP on new_branch:...."commit message XX"
+
+git stash show ==> detailed stash
+
+git stash pop ==>
+
