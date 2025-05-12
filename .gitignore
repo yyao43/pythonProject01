@@ -2,4 +2,4 @@
 .venv/
 
 #temp. cache
-__pyche__/
+__pycache__/
